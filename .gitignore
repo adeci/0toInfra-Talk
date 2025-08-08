@@ -1,0 +1,8 @@
+file.txt
+result
+
+# webserver
+webserver/target
+webserver/Cargo.lock
+webserver/.direnv
+webserver/flake.lock

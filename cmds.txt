@@ -1,0 +1,19 @@
+-- why nix?
+nix-shell -p python27 python311
+NIXPKGS_ALLOW_INSECURE=1 nix-shell -p python27 python311
+python2 --version
+python3 --version
+nix run nixpkgs#_2048-in-terminal
+
+-- devshells and direnv
+- webpage
+cargo run
+
+-- derivations
+nix derivation show nixpkgs#hello
+nix derivation show --impure --expr '(import <nixpkgs> {}).hello.overrideAttrs (old: { MY_VAR="demo"; })'
+nix hash file file.txt
+
+-- channels
+nix eval nixpkgs#hello
+nix eval github:NixOS/nixpkgs/nixos-25.05#hello
