@@ -22,3 +22,4 @@ nix eval --json github:NixOS/nixpkgs/nixos-24.11#hello.version
 
 -- nixos
 nix run .
+- mention generations
