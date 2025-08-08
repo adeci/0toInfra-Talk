@@ -11,9 +11,14 @@ cargo run
 
 -- derivations
 nix derivation show nixpkgs#hello
-nix derivation show --impure --expr '(import <nixpkgs> {}).hello.overrideAttrs (old: { MY_VAR="demo"; })'
+nix derivation show --impure --expr 'with import <nixpkgs> {}; hello.overrideAttrs (old: { MY_VAR="demo"; })'
 nix hash file file.txt
 
 -- channels
 nix eval nixpkgs#hello
 nix eval github:NixOS/nixpkgs/nixos-25.05#hello
+nix eval --json nixpkgs#hello.version
+nix eval --json github:NixOS/nixpkgs/nixos-24.11#hello.version
+
+-- nixos
+nix run .
